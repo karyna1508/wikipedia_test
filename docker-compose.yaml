@@ -1,0 +1,21 @@
+version: '3.5'
+
+services:
+
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: test
+
+  bot:
+    image: karina1508/wikipedia
+    environment:
+      CREATE_TABLE: "yes"
+      DB_SWITCH: "on"
+      TOKEN: 5688531539:AAGDi8_ughuat--09Mr2njc0FZGKdsmyVf4cd
+      HOST: db
+      PORT: 5432
+      USER: postgres
+      PASSWORD: test
+      DBNAME: postgres
+      SSLMODE: disable
